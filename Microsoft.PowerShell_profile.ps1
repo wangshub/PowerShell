@@ -19,7 +19,7 @@ New-Alias open ii
 # Set-Theme ParadoxGlucose
 # Set-PoshPrompt -theme "agnoster"
 
-oh-my-posh --init --shell pwsh --config "C:\Users\rocks\Documents\PowerShell\ohmyposh_wangshub.json" | Invoke-Expression
+oh-my-posh --init --shell pwsh --config "~\Documents\PowerShell\ohmyposh_theme.json" | Invoke-Expression
 
 
 # Set-Proxy command
