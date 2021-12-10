@@ -15,12 +15,29 @@ set-alias desktop "Desktop.ps1"
 
 # New-Alias <alias> <aliased-command>
 New-Alias open ii
+New-Alias ll lsd
+New-Alias vi nvim
+New-Alias vim nvim
 
 # Set-Theme ParadoxGlucose
 # Set-PoshPrompt -theme "agnoster"
 
 oh-my-posh --init --shell pwsh --config "~\Documents\PowerShell\ohmyposh_theme.json" | Invoke-Expression
+Enable-PoshTooltips
+Function Get-WSL2WindowsHost {
+  return wsl cat /etc/resolv.conf `| grep nameserver `| cut -d ' ' -f 2
+}
 
+
+#For PowerShell v3
+Function gig {
+  param(
+    [Parameter(Mandatory=$true)]
+    [string[]]$list
+  )
+  $params = ($list | ForEach-Object { [uri]::EscapeDataString($_) }) -join ","
+  Invoke-WebRequest -Uri "https://www.toptal.com/developers/gitignore/api/$params" | select -ExpandProperty content | Out-File -FilePath $(Join-Path -path $pwd -ChildPath ".gitignore") -Encoding ascii
+}
 
 # Set-Proxy command
 Function SetProxy() {
