@@ -14,10 +14,11 @@ Import-Module oh-my-posh
 set-alias desktop "Desktop.ps1"
 
 # New-Alias <alias> <aliased-command>
-New-Alias open ii
+New-Alias open files
 New-Alias ll lsd
 New-Alias vi nvim
 New-Alias vim nvim
+New-Alias wget Invoke-WebRequest
 
 # Set-Theme ParadoxGlucose
 # Set-PoshPrompt -theme "agnoster"
