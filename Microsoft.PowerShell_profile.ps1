@@ -8,13 +8,13 @@ if ($host.Name -eq 'ConsoleHost')
 # Import-Module PSColors
 Import-Module posh-git
 Import-Module -Name Terminal-Icons
-Import-Module oh-my-posh
+# Import-Module oh-my-posh
 
 
 set-alias desktop "Desktop.ps1"
 
 # New-Alias <alias> <aliased-command>
-New-Alias open files
+New-Alias open start
 New-Alias ll lsd
 New-Alias vi nvim
 New-Alias vim nvim
