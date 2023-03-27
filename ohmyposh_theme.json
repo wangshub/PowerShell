@@ -214,6 +214,24 @@
           "template": "\u23f2\ufe0f {{ .CurrentDate | date .Format }} ",
           "trailing_diamond": "\ue0b4",
           "type": "time"
+        },
+        {
+          "type": "battery",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#193549",
+          "background": "#ffeb3b",
+          "background_templates": [
+            "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
+            "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
+            "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
+          ],
+          "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}\uF295 ",
+          "properties": {
+            "discharging_icon": "\uE231 ",
+            "charging_icon": "\uE234 ",
+            "charged_icon": "\uE22F "
+          }
         }
       ],
       "type": "prompt"
